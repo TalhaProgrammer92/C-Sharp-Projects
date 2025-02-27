@@ -1,0 +1,25 @@
+# Visual Studio Files  
+.vs/  
+*.suo  
+*.user  
+*.vcxproj.*  
+
+# Build Outputs  
+bin/  
+obj/  
+*.exe  
+*.dll  
+*.pdb  
+
+# NuGet Packages  
+packages/  
+*.nupkg  
+project.lock.json  
+
+# Rider & VS Code  
+.idea/  
+.vscode/  
+
+# User-Specific & Logs  
+*.log  
+*.tmp  
