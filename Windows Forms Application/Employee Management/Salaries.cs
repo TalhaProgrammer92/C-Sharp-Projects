@@ -10,22 +10,19 @@ using System.Windows.Forms;
 
 namespace Employee_Management
 {
-    public partial class Employees : Form
+    public partial class Salaries : Form
     {
-        public Employees()
+        public Salaries()
         {
             InitializeComponent();
-
-            // Hiding the maximize button of the window
-            this.MaximizeBox = false;
         }
 
-        private void label2_Click(object sender, EventArgs e)
+        private void Salaries_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void label9_Click(object sender, EventArgs e)
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

@@ -150,6 +150,7 @@
             Controls.Add(label1);
             Controls.Add(panel1);
             Font = new Font("Arial Narrow", 8.25F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            FormBorderStyle = FormBorderStyle.None;
             Margin = new Padding(2, 3, 2, 3);
             Name = "Login";
             StartPosition = FormStartPosition.CenterScreen;
