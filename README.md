@@ -1,4 +1,4 @@
-# My C# & WPF Projects  
+# My .NET Projects  
 
 This repository contains various C# projects, including WPF applications, demonstrating my work in desktop application development.  
 
