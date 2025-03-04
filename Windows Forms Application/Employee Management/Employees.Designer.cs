@@ -30,41 +30,48 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Employees));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             panel1 = new Panel();
             label1 = new Label();
             label2 = new Label();
             label3 = new Label();
-            textBox1 = new TextBox();
+            EmpNameEntry = new TextBox();
             label4 = new Label();
             label5 = new Label();
             label6 = new Label();
             label7 = new Label();
             label8 = new Label();
-            textBox6 = new TextBox();
+            EmpDailySalaryEntry = new TextBox();
             panel2 = new Panel();
             pictureBox1 = new PictureBox();
-            comboBox1 = new ComboBox();
-            comboBox2 = new ComboBox();
-            dataGridView1 = new DataGridView();
-            dateTimePicker1 = new DateTimePicker();
-            dateTimePicker2 = new DateTimePicker();
-            button1 = new Button();
-            button2 = new Button();
-            label9 = new Label();
+            EmpGenderComboBox = new ComboBox();
+            EmpDeptComboBox = new ComboBox();
+            EmpInsertButton = new Button();
+            EmpUpdateButton = new Button();
+            EmpLabel = new Label();
             pictureBox2 = new PictureBox();
             pictureBox3 = new PictureBox();
-            label10 = new Label();
+            DeptLabel = new Label();
             pictureBox4 = new PictureBox();
-            label11 = new Label();
+            SalaryLabel = new Label();
             pictureBox5 = new PictureBox();
-            label12 = new Label();
+            LogOutLabel = new Label();
+            EmpDataGrid = new Guna.UI2.WinForms.Guna2DataGridView();
+            EmpDOBPicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
+            EmpDOJPicker = new Guna.UI2.WinForms.Guna2DateTimePicker();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)EmpDataGrid).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -98,7 +105,6 @@
             label2.Size = new Size(148, 21);
             label2.TabIndex = 2;
             label2.Text = "List of Employees";
-            label2.Click += label2_Click;
             // 
             // label3
             // 
@@ -111,13 +117,13 @@
             label3.TabIndex = 7;
             label3.Text = "Name";
             // 
-            // textBox1
+            // EmpNameEntry
             // 
-            textBox1.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(12, 176);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(257, 26);
-            textBox1.TabIndex = 6;
+            EmpNameEntry.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            EmpNameEntry.Location = new Point(12, 176);
+            EmpNameEntry.Name = "EmpNameEntry";
+            EmpNameEntry.Size = new Size(257, 26);
+            EmpNameEntry.TabIndex = 6;
             // 
             // label4
             // 
@@ -174,13 +180,13 @@
             label8.TabIndex = 17;
             label8.Text = "Daily Salary";
             // 
-            // textBox6
+            // EmpDailySalaryEntry
             // 
-            textBox6.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox6.Location = new Point(12, 502);
-            textBox6.Name = "textBox6";
-            textBox6.Size = new Size(257, 26);
-            textBox6.TabIndex = 16;
+            EmpDailySalaryEntry.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            EmpDailySalaryEntry.Location = new Point(12, 502);
+            EmpDailySalaryEntry.Name = "EmpDailySalaryEntry";
+            EmpDailySalaryEntry.Size = new Size(257, 26);
+            EmpDailySalaryEntry.TabIndex = 16;
             // 
             // panel2
             // 
@@ -201,85 +207,59 @@
             pictureBox1.TabIndex = 19;
             pictureBox1.TabStop = false;
             // 
-            // comboBox1
+            // EmpGenderComboBox
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Items.AddRange(new object[] { "Male", "Female" });
-            comboBox1.Location = new Point(12, 240);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(257, 29);
-            comboBox1.TabIndex = 20;
+            EmpGenderComboBox.FormattingEnabled = true;
+            EmpGenderComboBox.Items.AddRange(new object[] { "Male", "Female" });
+            EmpGenderComboBox.Location = new Point(12, 240);
+            EmpGenderComboBox.Name = "EmpGenderComboBox";
+            EmpGenderComboBox.Size = new Size(257, 29);
+            EmpGenderComboBox.TabIndex = 20;
             // 
-            // comboBox2
+            // EmpDeptComboBox
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(12, 301);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(257, 29);
-            comboBox2.TabIndex = 21;
+            EmpDeptComboBox.FormattingEnabled = true;
+            EmpDeptComboBox.Location = new Point(12, 301);
+            EmpDeptComboBox.Name = "EmpDeptComboBox";
+            EmpDeptComboBox.Size = new Size(257, 29);
+            EmpDeptComboBox.TabIndex = 21;
             // 
-            // dataGridView1
+            // EmpInsertButton
             // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(328, 176);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(912, 412);
-            dataGridView1.TabIndex = 22;
+            EmpInsertButton.BackColor = Color.Teal;
+            EmpInsertButton.FlatStyle = FlatStyle.Flat;
+            EmpInsertButton.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            EmpInsertButton.ForeColor = SystemColors.ButtonFace;
+            EmpInsertButton.Location = new Point(21, 543);
+            EmpInsertButton.Name = "EmpInsertButton";
+            EmpInsertButton.Size = new Size(99, 45);
+            EmpInsertButton.TabIndex = 25;
+            EmpInsertButton.Text = "INSERT";
+            EmpInsertButton.UseVisualStyleBackColor = false;
             // 
-            // dateTimePicker1
+            // EmpUpdateButton
             // 
-            dateTimePicker1.CalendarForeColor = Color.Teal;
-            dateTimePicker1.Location = new Point(12, 364);
-            dateTimePicker1.Name = "dateTimePicker1";
-            dateTimePicker1.Size = new Size(257, 29);
-            dateTimePicker1.TabIndex = 23;
+            EmpUpdateButton.BackColor = Color.Teal;
+            EmpUpdateButton.FlatStyle = FlatStyle.Flat;
+            EmpUpdateButton.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            EmpUpdateButton.ForeColor = SystemColors.ButtonFace;
+            EmpUpdateButton.Location = new Point(160, 543);
+            EmpUpdateButton.Name = "EmpUpdateButton";
+            EmpUpdateButton.Size = new Size(99, 45);
+            EmpUpdateButton.TabIndex = 26;
+            EmpUpdateButton.Text = "UPDATE";
+            EmpUpdateButton.UseVisualStyleBackColor = false;
             // 
-            // dateTimePicker2
+            // EmpLabel
             // 
-            dateTimePicker2.CalendarForeColor = Color.Teal;
-            dateTimePicker2.Location = new Point(12, 431);
-            dateTimePicker2.Name = "dateTimePicker2";
-            dateTimePicker2.Size = new Size(257, 29);
-            dateTimePicker2.TabIndex = 24;
-            // 
-            // button1
-            // 
-            button1.BackColor = Color.Teal;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(21, 543);
-            button1.Name = "button1";
-            button1.Size = new Size(99, 45);
-            button1.TabIndex = 25;
-            button1.Text = "INSERT";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            button2.BackColor = Color.Teal;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.ButtonFace;
-            button2.Location = new Point(160, 543);
-            button2.Name = "button2";
-            button2.Size = new Size(99, 45);
-            button2.TabIndex = 26;
-            button2.Text = "UPDATE";
-            button2.UseVisualStyleBackColor = false;
-            // 
-            // label9
-            // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
-            label9.ForeColor = Color.Teal;
-            label9.Location = new Point(439, 89);
-            label9.Name = "label9";
-            label9.Size = new Size(78, 20);
-            label9.TabIndex = 27;
-            label9.Text = "Employees";
-            label9.Click += label9_Click;
+            EmpLabel.AutoSize = true;
+            EmpLabel.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
+            EmpLabel.ForeColor = Color.Teal;
+            EmpLabel.Location = new Point(439, 89);
+            EmpLabel.Name = "EmpLabel";
+            EmpLabel.Size = new Size(78, 20);
+            EmpLabel.TabIndex = 27;
+            EmpLabel.Text = "Employees";
             // 
             // pictureBox2
             // 
@@ -301,16 +281,17 @@
             pictureBox3.TabIndex = 30;
             pictureBox3.TabStop = false;
             // 
-            // label10
+            // DeptLabel
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
-            label10.ForeColor = Color.Teal;
-            label10.Location = new Point(576, 89);
-            label10.Name = "label10";
-            label10.Size = new Size(87, 20);
-            label10.TabIndex = 29;
-            label10.Text = "Departments";
+            DeptLabel.AutoSize = true;
+            DeptLabel.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
+            DeptLabel.ForeColor = Color.Teal;
+            DeptLabel.Location = new Point(576, 89);
+            DeptLabel.Name = "DeptLabel";
+            DeptLabel.Size = new Size(87, 20);
+            DeptLabel.TabIndex = 29;
+            DeptLabel.Text = "Departments";
+            DeptLabel.Click += DeptLabel_Click;
             // 
             // pictureBox4
             // 
@@ -322,16 +303,17 @@
             pictureBox4.TabIndex = 32;
             pictureBox4.TabStop = false;
             // 
-            // label11
+            // SalaryLabel
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
-            label11.ForeColor = Color.Teal;
-            label11.Location = new Point(714, 89);
-            label11.Name = "label11";
-            label11.Size = new Size(59, 20);
-            label11.TabIndex = 31;
-            label11.Text = "Salaries";
+            SalaryLabel.AutoSize = true;
+            SalaryLabel.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
+            SalaryLabel.ForeColor = Color.Teal;
+            SalaryLabel.Location = new Point(714, 89);
+            SalaryLabel.Name = "SalaryLabel";
+            SalaryLabel.Size = new Size(59, 20);
+            SalaryLabel.TabIndex = 31;
+            SalaryLabel.Text = "Salaries";
+            SalaryLabel.Click += SalaryLabel_Click;
             // 
             // pictureBox5
             // 
@@ -343,16 +325,99 @@
             pictureBox5.TabIndex = 34;
             pictureBox5.TabStop = false;
             // 
-            // label12
+            // LogOutLabel
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
-            label12.ForeColor = Color.Teal;
-            label12.Location = new Point(825, 89);
-            label12.Name = "label12";
-            label12.Size = new Size(59, 20);
-            label12.TabIndex = 33;
-            label12.Text = "Log Out";
+            LogOutLabel.AutoSize = true;
+            LogOutLabel.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
+            LogOutLabel.ForeColor = Color.Teal;
+            LogOutLabel.Location = new Point(825, 89);
+            LogOutLabel.Name = "LogOutLabel";
+            LogOutLabel.Size = new Size(59, 20);
+            LogOutLabel.TabIndex = 33;
+            LogOutLabel.Text = "Log Out";
+            LogOutLabel.Click += LogOutLabel_Click;
+            // 
+            // EmpDataGrid
+            // 
+            dataGridViewCellStyle1.BackColor = Color.White;
+            EmpDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Teal;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            EmpDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            EmpDataGrid.ColumnHeadersHeight = 25;
+            EmpDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            EmpDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            EmpDataGrid.GridColor = Color.FromArgb(231, 229, 255);
+            EmpDataGrid.Location = new Point(328, 176);
+            EmpDataGrid.Name = "EmpDataGrid";
+            EmpDataGrid.RowHeadersVisible = false;
+            EmpDataGrid.Size = new Size(912, 412);
+            EmpDataGrid.TabIndex = 44;
+            EmpDataGrid.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            EmpDataGrid.ThemeStyle.AlternatingRowsStyle.Font = null;
+            EmpDataGrid.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            EmpDataGrid.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            EmpDataGrid.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            EmpDataGrid.ThemeStyle.BackColor = Color.White;
+            EmpDataGrid.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            EmpDataGrid.ThemeStyle.HeaderStyle.BackColor = Color.Teal;
+            EmpDataGrid.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            EmpDataGrid.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            EmpDataGrid.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            EmpDataGrid.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            EmpDataGrid.ThemeStyle.HeaderStyle.Height = 25;
+            EmpDataGrid.ThemeStyle.ReadOnly = false;
+            EmpDataGrid.ThemeStyle.RowsStyle.BackColor = Color.White;
+            EmpDataGrid.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            EmpDataGrid.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            EmpDataGrid.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            EmpDataGrid.ThemeStyle.RowsStyle.Height = 25;
+            EmpDataGrid.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            EmpDataGrid.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            // 
+            // EmpDOBPicker
+            // 
+            EmpDOBPicker.Checked = true;
+            EmpDOBPicker.CustomizableEdges = customizableEdges1;
+            EmpDOBPicker.FillColor = Color.Teal;
+            EmpDOBPicker.Font = new Font("Segoe UI", 9F);
+            EmpDOBPicker.Format = DateTimePickerFormat.Long;
+            EmpDOBPicker.Location = new Point(12, 364);
+            EmpDOBPicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            EmpDOBPicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            EmpDOBPicker.Name = "EmpDOBPicker";
+            EmpDOBPicker.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            EmpDOBPicker.Size = new Size(257, 36);
+            EmpDOBPicker.TabIndex = 45;
+            EmpDOBPicker.Value = new DateTime(2025, 3, 2, 11, 28, 39, 325);
+            // 
+            // EmpDOJPicker
+            // 
+            EmpDOJPicker.Checked = true;
+            EmpDOJPicker.CustomizableEdges = customizableEdges3;
+            EmpDOJPicker.FillColor = Color.Teal;
+            EmpDOJPicker.Font = new Font("Segoe UI", 9F);
+            EmpDOJPicker.Format = DateTimePickerFormat.Long;
+            EmpDOJPicker.Location = new Point(12, 431);
+            EmpDOJPicker.MaxDate = new DateTime(9998, 12, 31, 0, 0, 0, 0);
+            EmpDOJPicker.MinDate = new DateTime(1753, 1, 1, 0, 0, 0, 0);
+            EmpDOJPicker.Name = "EmpDOJPicker";
+            EmpDOJPicker.ShadowDecoration.CustomizableEdges = customizableEdges4;
+            EmpDOJPicker.Size = new Size(257, 36);
+            EmpDOJPicker.TabIndex = 46;
+            EmpDOJPicker.Value = new DateTime(2025, 3, 2, 11, 28, 39, 325);
             // 
             // Employees
             // 
@@ -360,31 +425,31 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1264, 681);
+            Controls.Add(EmpDOJPicker);
+            Controls.Add(EmpDOBPicker);
+            Controls.Add(EmpDataGrid);
             Controls.Add(pictureBox5);
-            Controls.Add(label12);
+            Controls.Add(LogOutLabel);
             Controls.Add(pictureBox4);
-            Controls.Add(label11);
+            Controls.Add(SalaryLabel);
             Controls.Add(pictureBox3);
-            Controls.Add(label10);
+            Controls.Add(DeptLabel);
             Controls.Add(pictureBox2);
-            Controls.Add(label9);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(dateTimePicker2);
-            Controls.Add(dateTimePicker1);
-            Controls.Add(dataGridView1);
-            Controls.Add(comboBox2);
-            Controls.Add(comboBox1);
+            Controls.Add(EmpLabel);
+            Controls.Add(EmpUpdateButton);
+            Controls.Add(EmpInsertButton);
+            Controls.Add(EmpDeptComboBox);
+            Controls.Add(EmpGenderComboBox);
             Controls.Add(pictureBox1);
             Controls.Add(panel2);
             Controls.Add(label8);
-            Controls.Add(textBox6);
+            Controls.Add(EmpDailySalaryEntry);
             Controls.Add(label7);
             Controls.Add(label6);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(EmpNameEntry);
             Controls.Add(label2);
             Controls.Add(panel1);
             Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
@@ -397,11 +462,11 @@
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
+            ((System.ComponentModel.ISupportInitialize)EmpDataGrid).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -412,29 +477,29 @@
         private Label label1;
         private Label label2;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox EmpNameEntry;
         private Label label4;
         private Label label5;
         private Label label6;
         private Label label7;
         private Label label8;
-        private TextBox textBox6;
+        private TextBox EmpDailySalaryEntry;
         private Panel panel2;
         private PictureBox pictureBox1;
-        private ComboBox comboBox1;
-        private ComboBox comboBox2;
-        private DataGridView dataGridView1;
-        private DateTimePicker dateTimePicker1;
-        private DateTimePicker dateTimePicker2;
-        private Button button1;
-        private Button button2;
-        private Label label9;
+        private ComboBox EmpGenderComboBox;
+        private ComboBox EmpDeptComboBox;
+        private Button EmpInsertButton;
+        private Button EmpUpdateButton;
+        private Label EmpLabel;
         private PictureBox pictureBox2;
         private PictureBox pictureBox3;
-        private Label label10;
+        private Label DeptLabel;
         private PictureBox pictureBox4;
-        private Label label11;
+        private Label SalaryLabel;
         private PictureBox pictureBox5;
-        private Label label12;
+        private Label LogOutLabel;
+        private Guna.UI2.WinForms.Guna2DataGridView EmpDataGrid;
+        private Guna.UI2.WinForms.Guna2DateTimePicker EmpDOBPicker;
+        private Guna.UI2.WinForms.Guna2DateTimePicker EmpDOJPicker;
     }
 }

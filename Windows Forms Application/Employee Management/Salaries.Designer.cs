@@ -44,13 +44,13 @@
             label5 = new Label();
             pictureBox1 = new PictureBox();
             pictureBox5 = new PictureBox();
-            label12 = new Label();
+            LogOutLabel = new Label();
             pictureBox4 = new PictureBox();
-            label11 = new Label();
+            SalaryLabel = new Label();
             pictureBox3 = new PictureBox();
-            label10 = new Label();
+            DeptLabel = new Label();
             pictureBox2 = new PictureBox();
-            label9 = new Label();
+            EmpLabel = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -208,16 +208,17 @@
             pictureBox5.TabIndex = 52;
             pictureBox5.TabStop = false;
             // 
-            // label12
+            // LogOutLabel
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
-            label12.ForeColor = Color.Teal;
-            label12.Location = new Point(825, 89);
-            label12.Name = "label12";
-            label12.Size = new Size(59, 20);
-            label12.TabIndex = 51;
-            label12.Text = "Log Out";
+            LogOutLabel.AutoSize = true;
+            LogOutLabel.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
+            LogOutLabel.ForeColor = Color.Teal;
+            LogOutLabel.Location = new Point(825, 89);
+            LogOutLabel.Name = "LogOutLabel";
+            LogOutLabel.Size = new Size(59, 20);
+            LogOutLabel.TabIndex = 51;
+            LogOutLabel.Text = "Log Out";
+            LogOutLabel.Click += LogOutLabel_Click;
             // 
             // pictureBox4
             // 
@@ -229,16 +230,16 @@
             pictureBox4.TabIndex = 50;
             pictureBox4.TabStop = false;
             // 
-            // label11
+            // SalaryLabel
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
-            label11.ForeColor = Color.Teal;
-            label11.Location = new Point(714, 89);
-            label11.Name = "label11";
-            label11.Size = new Size(59, 20);
-            label11.TabIndex = 49;
-            label11.Text = "Salaries";
+            SalaryLabel.AutoSize = true;
+            SalaryLabel.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
+            SalaryLabel.ForeColor = Color.Teal;
+            SalaryLabel.Location = new Point(714, 89);
+            SalaryLabel.Name = "SalaryLabel";
+            SalaryLabel.Size = new Size(59, 20);
+            SalaryLabel.TabIndex = 49;
+            SalaryLabel.Text = "Salaries";
             // 
             // pictureBox3
             // 
@@ -250,16 +251,17 @@
             pictureBox3.TabIndex = 48;
             pictureBox3.TabStop = false;
             // 
-            // label10
+            // DeptLabel
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
-            label10.ForeColor = Color.Teal;
-            label10.Location = new Point(576, 89);
-            label10.Name = "label10";
-            label10.Size = new Size(87, 20);
-            label10.TabIndex = 47;
-            label10.Text = "Departments";
+            DeptLabel.AutoSize = true;
+            DeptLabel.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
+            DeptLabel.ForeColor = Color.Teal;
+            DeptLabel.Location = new Point(576, 89);
+            DeptLabel.Name = "DeptLabel";
+            DeptLabel.Size = new Size(87, 20);
+            DeptLabel.TabIndex = 47;
+            DeptLabel.Text = "Departments";
+            DeptLabel.Click += DeptLabel_Click;
             // 
             // pictureBox2
             // 
@@ -271,16 +273,17 @@
             pictureBox2.TabIndex = 46;
             pictureBox2.TabStop = false;
             // 
-            // label9
+            // EmpLabel
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
-            label9.ForeColor = Color.Teal;
-            label9.Location = new Point(439, 89);
-            label9.Name = "label9";
-            label9.Size = new Size(78, 20);
-            label9.TabIndex = 45;
-            label9.Text = "Employees";
+            EmpLabel.AutoSize = true;
+            EmpLabel.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
+            EmpLabel.ForeColor = Color.Teal;
+            EmpLabel.Location = new Point(439, 89);
+            EmpLabel.Name = "EmpLabel";
+            EmpLabel.Size = new Size(78, 20);
+            EmpLabel.TabIndex = 45;
+            EmpLabel.Text = "Employees";
+            EmpLabel.Click += EmpLabel_Click;
             // 
             // Salaries
             // 
@@ -289,13 +292,13 @@
             BackColor = Color.White;
             ClientSize = new Size(1280, 720);
             Controls.Add(pictureBox5);
-            Controls.Add(label12);
+            Controls.Add(LogOutLabel);
             Controls.Add(pictureBox4);
-            Controls.Add(label11);
+            Controls.Add(SalaryLabel);
             Controls.Add(pictureBox3);
-            Controls.Add(label10);
+            Controls.Add(DeptLabel);
             Controls.Add(pictureBox2);
-            Controls.Add(label9);
+            Controls.Add(EmpLabel);
             Controls.Add(pictureBox1);
             Controls.Add(dateTimePicker2);
             Controls.Add(label5);
@@ -345,12 +348,12 @@
         private Label label5;
         private PictureBox pictureBox1;
         private PictureBox pictureBox5;
-        private Label label12;
+        private Label LogOutLabel;
         private PictureBox pictureBox4;
-        private Label label11;
+        private Label SalaryLabel;
         private PictureBox pictureBox3;
-        private Label label10;
+        private Label DeptLabel;
         private PictureBox pictureBox2;
-        private Label label9;
+        private Label EmpLabel;
     }
 }

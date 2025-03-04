@@ -29,31 +29,35 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Departments));
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             panel1 = new Panel();
             label1 = new Label();
             panel2 = new Panel();
             label2 = new Label();
-            button2 = new Button();
-            button1 = new Button();
-            dataGridView1 = new DataGridView();
+            DeptUpdateButton = new Button();
+            DeptInsertButton = new Button();
             label3 = new Label();
-            textBox1 = new TextBox();
+            DeptNameEntry = new TextBox();
             pictureBox1 = new PictureBox();
             pictureBox5 = new PictureBox();
-            label12 = new Label();
+            LogOutLabel = new Label();
             pictureBox4 = new PictureBox();
-            label11 = new Label();
+            SalaryLabel = new Label();
             pictureBox3 = new PictureBox();
-            label10 = new Label();
+            DeptLabel = new Label();
             pictureBox2 = new PictureBox();
-            label9 = new Label();
+            EmpLabel = new Label();
+            DeptDataGrid = new Guna.UI2.WinForms.Guna2DataGridView();
+            DeptRemoveButton = new Button();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)DeptDataGrid).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -97,40 +101,33 @@
             label2.TabIndex = 20;
             label2.Text = "List of Departments";
             // 
-            // button2
+            // DeptUpdateButton
             // 
-            button2.BackColor = Color.Teal;
-            button2.FlatStyle = FlatStyle.Flat;
-            button2.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button2.ForeColor = SystemColors.ButtonFace;
-            button2.Location = new Point(164, 219);
-            button2.Name = "button2";
-            button2.Size = new Size(99, 45);
-            button2.TabIndex = 31;
-            button2.Text = "UPDATE";
-            button2.UseVisualStyleBackColor = false;
+            DeptUpdateButton.BackColor = Color.Teal;
+            DeptUpdateButton.FlatStyle = FlatStyle.Flat;
+            DeptUpdateButton.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DeptUpdateButton.ForeColor = SystemColors.ButtonFace;
+            DeptUpdateButton.Location = new Point(164, 219);
+            DeptUpdateButton.Name = "DeptUpdateButton";
+            DeptUpdateButton.Size = new Size(99, 45);
+            DeptUpdateButton.TabIndex = 31;
+            DeptUpdateButton.Text = "UPDATE";
+            DeptUpdateButton.UseVisualStyleBackColor = false;
+            DeptUpdateButton.Click += DeptUpdateButton_Click_1;
             // 
-            // button1
+            // DeptInsertButton
             // 
-            button1.BackColor = Color.Teal;
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            button1.ForeColor = SystemColors.ButtonFace;
-            button1.Location = new Point(29, 219);
-            button1.Name = "button1";
-            button1.Size = new Size(99, 45);
-            button1.TabIndex = 30;
-            button1.Text = "INSERT";
-            button1.UseVisualStyleBackColor = false;
-            // 
-            // dataGridView1
-            // 
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(328, 176);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(912, 412);
-            dataGridView1.TabIndex = 29;
+            DeptInsertButton.BackColor = Color.Teal;
+            DeptInsertButton.FlatStyle = FlatStyle.Flat;
+            DeptInsertButton.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DeptInsertButton.ForeColor = SystemColors.ButtonFace;
+            DeptInsertButton.Location = new Point(29, 219);
+            DeptInsertButton.Name = "DeptInsertButton";
+            DeptInsertButton.Size = new Size(99, 45);
+            DeptInsertButton.TabIndex = 30;
+            DeptInsertButton.Text = "INSERT";
+            DeptInsertButton.UseVisualStyleBackColor = false;
+            DeptInsertButton.Click += DeptInsertButton_Click;
             // 
             // label3
             // 
@@ -143,13 +140,13 @@
             label3.TabIndex = 28;
             label3.Text = "Name";
             // 
-            // textBox1
+            // DeptNameEntry
             // 
-            textBox1.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            textBox1.Location = new Point(12, 177);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(257, 26);
-            textBox1.TabIndex = 27;
+            DeptNameEntry.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DeptNameEntry.Location = new Point(12, 177);
+            DeptNameEntry.Name = "DeptNameEntry";
+            DeptNameEntry.Size = new Size(257, 26);
+            DeptNameEntry.TabIndex = 27;
             // 
             // pictureBox1
             // 
@@ -171,16 +168,16 @@
             pictureBox5.TabIndex = 42;
             pictureBox5.TabStop = false;
             // 
-            // label12
+            // LogOutLabel
             // 
-            label12.AutoSize = true;
-            label12.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
-            label12.ForeColor = Color.Teal;
-            label12.Location = new Point(825, 89);
-            label12.Name = "label12";
-            label12.Size = new Size(59, 20);
-            label12.TabIndex = 41;
-            label12.Text = "Log Out";
+            LogOutLabel.AutoSize = true;
+            LogOutLabel.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
+            LogOutLabel.ForeColor = Color.Teal;
+            LogOutLabel.Location = new Point(825, 89);
+            LogOutLabel.Name = "LogOutLabel";
+            LogOutLabel.Size = new Size(59, 20);
+            LogOutLabel.TabIndex = 41;
+            LogOutLabel.Text = "Log Out";
             // 
             // pictureBox4
             // 
@@ -192,16 +189,17 @@
             pictureBox4.TabIndex = 40;
             pictureBox4.TabStop = false;
             // 
-            // label11
+            // SalaryLabel
             // 
-            label11.AutoSize = true;
-            label11.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
-            label11.ForeColor = Color.Teal;
-            label11.Location = new Point(714, 89);
-            label11.Name = "label11";
-            label11.Size = new Size(59, 20);
-            label11.TabIndex = 39;
-            label11.Text = "Salaries";
+            SalaryLabel.AutoSize = true;
+            SalaryLabel.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
+            SalaryLabel.ForeColor = Color.Teal;
+            SalaryLabel.Location = new Point(714, 89);
+            SalaryLabel.Name = "SalaryLabel";
+            SalaryLabel.Size = new Size(59, 20);
+            SalaryLabel.TabIndex = 39;
+            SalaryLabel.Text = "Salaries";
+            SalaryLabel.Click += SalaryLabel_Click;
             // 
             // pictureBox3
             // 
@@ -213,16 +211,17 @@
             pictureBox3.TabIndex = 38;
             pictureBox3.TabStop = false;
             // 
-            // label10
+            // DeptLabel
             // 
-            label10.AutoSize = true;
-            label10.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
-            label10.ForeColor = Color.Teal;
-            label10.Location = new Point(576, 89);
-            label10.Name = "label10";
-            label10.Size = new Size(87, 20);
-            label10.TabIndex = 37;
-            label10.Text = "Departments";
+            DeptLabel.AutoSize = true;
+            DeptLabel.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
+            DeptLabel.ForeColor = Color.Teal;
+            DeptLabel.Location = new Point(576, 89);
+            DeptLabel.Name = "DeptLabel";
+            DeptLabel.Size = new Size(87, 20);
+            DeptLabel.TabIndex = 37;
+            DeptLabel.Text = "Departments";
+            DeptLabel.Click += DeptLabel_Click;
             // 
             // pictureBox2
             // 
@@ -234,36 +233,103 @@
             pictureBox2.TabIndex = 36;
             pictureBox2.TabStop = false;
             // 
-            // label9
+            // EmpLabel
             // 
-            label9.AutoSize = true;
-            label9.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
-            label9.ForeColor = Color.Teal;
-            label9.Location = new Point(439, 89);
-            label9.Name = "label9";
-            label9.Size = new Size(78, 20);
-            label9.TabIndex = 35;
-            label9.Text = "Employees";
+            EmpLabel.AutoSize = true;
+            EmpLabel.Font = new Font("Arial Narrow", 12F, FontStyle.Bold);
+            EmpLabel.ForeColor = Color.Teal;
+            EmpLabel.Location = new Point(439, 89);
+            EmpLabel.Name = "EmpLabel";
+            EmpLabel.Size = new Size(78, 20);
+            EmpLabel.TabIndex = 35;
+            EmpLabel.Text = "Employees";
+            EmpLabel.Click += EmpLabel_Click;
+            // 
+            // DeptDataGrid
+            // 
+            dataGridViewCellStyle1.BackColor = Color.White;
+            DeptDataGrid.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.Teal;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = Color.White;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            DeptDataGrid.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            DeptDataGrid.ColumnHeadersHeight = 25;
+            DeptDataGrid.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.White;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
+            DeptDataGrid.DefaultCellStyle = dataGridViewCellStyle3;
+            DeptDataGrid.GridColor = Color.FromArgb(231, 229, 255);
+            DeptDataGrid.Location = new Point(328, 176);
+            DeptDataGrid.Name = "DeptDataGrid";
+            DeptDataGrid.RowHeadersVisible = false;
+            DeptDataGrid.Size = new Size(912, 412);
+            DeptDataGrid.TabIndex = 43;
+            DeptDataGrid.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
+            DeptDataGrid.ThemeStyle.AlternatingRowsStyle.Font = null;
+            DeptDataGrid.ThemeStyle.AlternatingRowsStyle.ForeColor = Color.Empty;
+            DeptDataGrid.ThemeStyle.AlternatingRowsStyle.SelectionBackColor = Color.Empty;
+            DeptDataGrid.ThemeStyle.AlternatingRowsStyle.SelectionForeColor = Color.Empty;
+            DeptDataGrid.ThemeStyle.BackColor = Color.White;
+            DeptDataGrid.ThemeStyle.GridColor = Color.FromArgb(231, 229, 255);
+            DeptDataGrid.ThemeStyle.HeaderStyle.BackColor = Color.Teal;
+            DeptDataGrid.ThemeStyle.HeaderStyle.BorderStyle = DataGridViewHeaderBorderStyle.None;
+            DeptDataGrid.ThemeStyle.HeaderStyle.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DeptDataGrid.ThemeStyle.HeaderStyle.ForeColor = Color.White;
+            DeptDataGrid.ThemeStyle.HeaderStyle.HeaightSizeMode = DataGridViewColumnHeadersHeightSizeMode.EnableResizing;
+            DeptDataGrid.ThemeStyle.HeaderStyle.Height = 25;
+            DeptDataGrid.ThemeStyle.ReadOnly = false;
+            DeptDataGrid.ThemeStyle.RowsStyle.BackColor = Color.White;
+            DeptDataGrid.ThemeStyle.RowsStyle.BorderStyle = DataGridViewCellBorderStyle.SingleHorizontal;
+            DeptDataGrid.ThemeStyle.RowsStyle.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DeptDataGrid.ThemeStyle.RowsStyle.ForeColor = Color.FromArgb(71, 69, 94);
+            DeptDataGrid.ThemeStyle.RowsStyle.Height = 25;
+            DeptDataGrid.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
+            DeptDataGrid.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            DeptDataGrid.CellContentClick += DeptDataGrid_CellContentClick;
+            // 
+            // DeptRemoveButton
+            // 
+            DeptRemoveButton.BackColor = Color.Teal;
+            DeptRemoveButton.FlatStyle = FlatStyle.Flat;
+            DeptRemoveButton.Font = new Font("Arial Narrow", 12F, FontStyle.Regular, GraphicsUnit.Point, 0);
+            DeptRemoveButton.ForeColor = SystemColors.ButtonFace;
+            DeptRemoveButton.Location = new Point(97, 270);
+            DeptRemoveButton.Name = "DeptRemoveButton";
+            DeptRemoveButton.Size = new Size(99, 45);
+            DeptRemoveButton.TabIndex = 44;
+            DeptRemoveButton.Text = "REMOVE";
+            DeptRemoveButton.UseVisualStyleBackColor = false;
+            DeptRemoveButton.Click += DeptRemoveButton_Click;
             // 
             // Departments
             // 
             AutoScaleDimensions = new SizeF(9F, 21F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1264, 681);
+            Controls.Add(DeptRemoveButton);
+            Controls.Add(DeptDataGrid);
             Controls.Add(pictureBox5);
-            Controls.Add(label12);
+            Controls.Add(LogOutLabel);
             Controls.Add(pictureBox4);
-            Controls.Add(label11);
+            Controls.Add(SalaryLabel);
             Controls.Add(pictureBox3);
-            Controls.Add(label10);
+            Controls.Add(DeptLabel);
             Controls.Add(pictureBox2);
-            Controls.Add(label9);
+            Controls.Add(EmpLabel);
             Controls.Add(pictureBox1);
-            Controls.Add(button2);
-            Controls.Add(button1);
-            Controls.Add(dataGridView1);
+            Controls.Add(DeptUpdateButton);
+            Controls.Add(DeptInsertButton);
             Controls.Add(label3);
-            Controls.Add(textBox1);
+            Controls.Add(DeptNameEntry);
             Controls.Add(panel1);
             Controls.Add(panel2);
             Controls.Add(label2);
@@ -275,12 +341,12 @@
             Text = "Departments";
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox5).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox4).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
+            ((System.ComponentModel.ISupportInitialize)DeptDataGrid).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -291,19 +357,20 @@
         private Label label1;
         private Panel panel2;
         private Label label2;
-        private Button button2;
-        private Button button1;
-        private DataGridView dataGridView1;
+        private Button DeptUpdateButton;
+        private Button DeptInsertButton;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox DeptNameEntry;
         private PictureBox pictureBox1;
         private PictureBox pictureBox5;
-        private Label label12;
+        private Label LogOutLabel;
         private PictureBox pictureBox4;
-        private Label label11;
+        private Label SalaryLabel;
         private PictureBox pictureBox3;
-        private Label label10;
+        private Label DeptLabel;
         private PictureBox pictureBox2;
-        private Label label9;
+        private Label EmpLabel;
+        private Guna.UI2.WinForms.Guna2DataGridView DeptDataGrid;
+        private Button DeptRemoveButton;
     }
 }

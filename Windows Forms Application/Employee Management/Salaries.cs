@@ -26,5 +26,26 @@ namespace Employee_Management
         {
 
         }
+
+        private void EmpLabel_Click(object sender, EventArgs e)
+        {
+            Employees obj = new Employees();
+            obj.Show();
+            this.Hide();
+        }
+
+        private void DeptLabel_Click(object sender, EventArgs e)
+        {
+            Departments obj = new Departments();
+            obj.Show();
+            this.Hide();
+        }
+
+        private void LogOutLabel_Click(object sender, EventArgs e)
+        {
+            Login obj = new Login();
+            obj.Show();
+            this.Hide();
+        }
     }
 }

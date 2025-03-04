@@ -20,14 +20,35 @@ namespace Employee_Management
             this.MaximizeBox = false;
         }
 
-        private void label2_Click(object sender, EventArgs e)
-        {
+        //private void label2_Click(object sender, EventArgs e)
+        //{
 
+        //}
+
+        //private void label9_Click(object sender, EventArgs e)
+        //{
+
+        //}
+
+        private void DeptLabel_Click(object sender, EventArgs e)
+        {
+            Departments obj = new Departments();
+            obj.Show();
+            this.Hide();
         }
 
-        private void label9_Click(object sender, EventArgs e)
+        private void SalaryLabel_Click(object sender, EventArgs e)
         {
+            Salaries obj = new Salaries();
+            obj.Show();
+            this.Hide();
+        }
 
+        private void LogOutLabel_Click(object sender, EventArgs e)
+        {
+            Login obj = new Login();
+            obj.Show();
+            this.Hide();
         }
     }
 }
