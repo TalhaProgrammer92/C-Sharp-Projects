@@ -236,6 +236,7 @@
             EmpInsertButton.TabIndex = 25;
             EmpInsertButton.Text = "INSERT";
             EmpInsertButton.UseVisualStyleBackColor = false;
+            EmpInsertButton.Click += EmpInsertButton_Click;
             // 
             // EmpUpdateButton
             // 

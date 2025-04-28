@@ -12,12 +12,21 @@ namespace Employee_Management
 {
     public partial class Employees : Form
     {
+        Functions func;
+
         public Employees()
         {
             InitializeComponent();
 
-            // Hiding the maximize button of the window
-            this.MaximizeBox = false;
+            func = new Functions();
+
+            ListAllEmployees();
+        }
+
+        private void ListAllEmployees()
+        {
+            string query = "SELECT * FROM Employees";
+            EmpDataGrid.DataSource = func.GetData(query);
         }
 
         //private void label2_Click(object sender, EventArgs e)
@@ -49,6 +58,18 @@ namespace Employee_Management
             Login obj = new Login();
             obj.Show();
             this.Hide();
+        }
+
+        private void GetDeparmentsForComboBox()
+        {
+            string query = "SELECT * FROM Departments";
+            EmpDeptComboBox.DisplayMember = func.GetData(query).Columns["DeptName"].ToString();
+            EmpDeptComboBox.ValueMember = func.GetData(query).Columns["DeptId"].ToString();
+        }
+
+        private void EmpInsertButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
