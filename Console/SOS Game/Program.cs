@@ -18,10 +18,10 @@
 
             Board myBoard = new Board();
 
-            myBoard.PlaceLetterAt(1, 1, 'S');
-            myBoard.PlaceLetterAt(1, 5, 'S');
-            myBoard.PlaceLetterAt(3, 4, 'O');
-            myBoard.PlaceLetterAt(5, 2, 'P');
+            //myBoard.PlaceLetterAt(1, 1, 'S');
+            //myBoard.PlaceLetterAt(1, 5, 'S');
+            //myBoard.PlaceLetterAt(3, 4, 'O');
+            //myBoard.PlaceLetterAt(5, 2, 'P');
 
             myBoard.Display();
         }
