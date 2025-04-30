@@ -21,6 +21,7 @@
 
             // Board - Test
             Board board = new Board();
+            board.placePiecesAtDefaultPoistions();
             board.displayBoard();
         }
     }

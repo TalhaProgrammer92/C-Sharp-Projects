@@ -9,24 +9,24 @@ namespace Chess
     class Symbol
     {
         // White Chess Pieces
-        public const string WHITE_PAWN = "♙";
-        public const string WHITE_ROOK = "♖";
-        public const string WHITE_KNIGHT = "♘";
-        public const string WHITE_BISHOP = "♗";
-        public const string WHITE_QUEEN = "♕";
-        public const string WHITE_KING = "♔";
+        public const string BLACK_PAWN = "♙";
+        public const string BLACK_ROOK = "♖";
+        public const string BLACK_KNIGHT = "♘";
+        public const string BLACK_BISHOP = "♗";
+        public const string BLACK_QUEEN = "♕";
+        public const string BLACK_KING = "♔";
 
         // Black Chess Pieces
-        public const string BLACK_PAWN = "♟";
-        public const string BLACK_ROOK = "♜";
-        public const string BLACK_KNIGHT = "♞";
-        public const string BLACK_BISHOP = "♝";
-        public const string BLACK_QUEEN = "♛";
-        public const string BLACK_KING = "♚";
+        public const string WHITE_PAWN = "♟";
+        public const string WHITE_ROOK = "♜";
+        public const string WHITE_KNIGHT = "♞";
+        public const string WHITE_BISHOP = "♝";
+        public const string WHITE_QUEEN = "♛";
+        public const string WHITE_KING = "♚";
 
         // Empty Boxes
-        public const string EMPTY_BOX_WHITE = "⬜";
-        public const string EMPTY_BOX_BLACK = "⬛";
+        public const string EMPTY_BOX_BLACK = "o";
+        public const string EMPTY_BOX_WHITE = ".";
 
         // Method to set UTF-8
         public static void setUtf8()
