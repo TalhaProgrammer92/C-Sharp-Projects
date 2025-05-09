@@ -12,7 +12,7 @@ namespace Chess
         public int row, column;
 
         // Constructor
-        public Position(int row, int column)
+        public Position(int row = 0, int column = 0)
         {
             this.row = row;
             this.column = column;

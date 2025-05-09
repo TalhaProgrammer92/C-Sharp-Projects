@@ -9,7 +9,7 @@ namespace Chess
     class Board
     {
         // Attributes
-        public Cell[,] grid = new Cell[8, 8];
+        private Cell[,] grid = new Cell[8, 8];
 
         // Constructor
         public Board()
@@ -108,6 +108,18 @@ namespace Chess
             //    }
             //    Console.WriteLine();
             //}
+        }
+
+        // Method - Get symbol
+        public string getSymbol(Position position)
+        {
+            return grid[position.row, position.column].unicode_symbol;
+        }
+
+        // Method - Place symbol
+        public void placeSymbol(Position position, string symbol)
+        {
+            grid[position.row, position.column].unicode_symbol = symbol;
         }
     }
 }
