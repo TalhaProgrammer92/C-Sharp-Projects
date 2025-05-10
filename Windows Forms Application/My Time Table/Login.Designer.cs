@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Login));
             panel1 = new Panel();
+            pictureBox1 = new PictureBox();
             closeButton = new PictureBox();
             emailInput = new TextBox();
             label1 = new Label();
@@ -37,10 +38,9 @@
             label2 = new Label();
             loginButton = new Button();
             signinButton = new Button();
-            pictureBox1 = new PictureBox();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)closeButton).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)closeButton).BeginInit();
             SuspendLayout();
             // 
             // panel1
@@ -53,6 +53,16 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(441, 70);
             panel1.TabIndex = 0;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(3, 3);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(66, 55);
+            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
+            pictureBox1.TabIndex = 1;
+            pictureBox1.TabStop = false;
             // 
             // closeButton
             // 
@@ -106,6 +116,7 @@
             loginButton.TabIndex = 5;
             loginButton.Text = "Log in";
             loginButton.UseVisualStyleBackColor = false;
+            loginButton.Click += loginButton_Click;
             // 
             // signinButton
             // 
@@ -116,16 +127,7 @@
             signinButton.TabIndex = 6;
             signinButton.Text = "Sign in";
             signinButton.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
-            pictureBox1.Location = new Point(3, 3);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(66, 55);
-            pictureBox1.SizeMode = PictureBoxSizeMode.Zoom;
-            pictureBox1.TabIndex = 1;
-            pictureBox1.TabStop = false;
+            signinButton.Click += signinButton_Click;
             // 
             // Login
             // 
@@ -145,8 +147,8 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Login";
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)closeButton).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)closeButton).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
