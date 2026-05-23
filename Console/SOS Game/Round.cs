@@ -47,6 +47,9 @@
                 int column = Player.TakeInput("Enter column index>> ", legalBoardIndex);
                 int letter_index = Player.TakeInput("Enter 1 for 'S' and 2 for 'O'>> ", legalLetterIndex);
 
+                // Update board
+                gameBoard.PlaceLetterAt(row, column, letters[letter_index - 1]);
+
                 // Update Game Control
                 Update();
             }

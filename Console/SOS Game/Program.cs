@@ -16,14 +16,20 @@
             //cell.Combined = true;
             //Console.WriteLine($"\nCell:\t{cell.Letter}\nComb:\t{cell.Combined}");
 
-            Board myBoard = new Board();
+            //Board myBoard = new Board();
 
             //myBoard.PlaceLetterAt(1, 1, 'S');
             //myBoard.PlaceLetterAt(1, 5, 'S');
             //myBoard.PlaceLetterAt(3, 4, 'O');
             //myBoard.PlaceLetterAt(5, 2, 'P');
 
-            myBoard.Display();
+            //myBoard.Display();
+
+            Round round = new([
+                new("Talha Ahmad"), new("Arslan Daddy")
+            ]);
+
+            round.StartGame();
         }
     }
 }
