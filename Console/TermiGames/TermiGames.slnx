@@ -1,0 +1,6 @@
+<Solution>
+  <Project Path="TermiGames.App/TermiGames.App.csproj" />
+  <Project Path="TermiGames.Engine/TermiGames.Engine.csproj" />
+  <Project Path="TermiGames.Games/TermiGames.Games.csproj" />
+  <Project Path="TermiGames.Launcher/TermiGames.Launcher.csproj" />
+</Solution>
