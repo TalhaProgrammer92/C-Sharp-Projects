@@ -4,7 +4,7 @@
     {
         public static void Info(string message)
         {
-            Text.WriteLine($"[INFO] {message}", new(ConsoleColor.White, ConsoleColor.DarkCyan));
+            Text.WriteLine($"[INFO] {message}", new(ConsoleColor.White, ConsoleColor.DarkBlue));
         }
 
         public static void Warning(string message)
