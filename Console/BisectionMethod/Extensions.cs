@@ -3,6 +3,6 @@
     public static class Extensions
     {
         public static string StrValue(this Interval interval) =>
-            $"[{interval.Start}, {interval.End}]";
+            $"[{interval.Start:0.#####}, {interval.End:0.#####}]";
     }
 }

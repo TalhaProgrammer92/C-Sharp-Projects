@@ -12,13 +12,9 @@
         public static double? EvaluateRootPrecision(
             Function function,
             Interval interval,
-            double? tolerance = null
+            bool showSteps = false
         )
         {
-            Console.Write("Press any key to continue...");
-            Console.ReadKey();
-            Console.WriteLine();
-
             if (!ContainsRoot(function, interval))
             {
                 Console.WriteLine("The function provided doesn't contain any roots.");
@@ -27,39 +23,81 @@
 
             double midPoint = (interval.Start + interval.End) / 2.0;
 
-            // If user provides tolerance
-            if (tolerance.HasValue)
+            // Show steps if user wants to see them.
+            if (showSteps)
             {
-                double width = (interval.End - interval.Start) / 2.0;
+                Console.WriteLine($"Interval: {interval.StrValue()}");
+                Console.WriteLine($"Midpoint: {midPoint:0.#####}");
+                Console.WriteLine($"f({midPoint:0.#####}) = {function.Evaluate(midPoint):0.#####}");
+                Console.WriteLine();
+            }
 
-                if (width < tolerance)
-                    return midPoint;
-            }
-            // Otherwise...
-            else
-            {
-                if (function.Evaluate(midPoint) == 0)
-                    return midPoint;
-            }
+            // Prevent infinite steps in case of a root that is not exactly zero.
+            if (Math.Abs(function.Evaluate(midPoint)) <= 0.0001)
+                return midPoint;
 
             // Check where the root lies in given interval.
             var sign = function.GetSignOfTwoFunctionInputs(interval.Start, midPoint);
 
             if (sign == Sign.MINUS) // Root lies somewhere between interval start and the midpoint.
             {
-                Console.WriteLine(
-                    $"[INFO] a = {interval.Start}, b = {interval.End}, c = {midPoint}, f(c) = {function.Evaluate(midPoint)}, Sign of f(c) = {sign}, new interval = [{interval.Start}, {midPoint}]"
-                );
-
-                return EvaluateRootPrecision(function, new(interval.Start, midPoint), tolerance);
+                return EvaluateRootPrecision(function, new(interval.Start, midPoint), showSteps);
             }
             else // Root lies somewhere between the midpoint and interval end.
             {
-                Console.WriteLine(
-                    $"[INFO] a = {interval.Start}, b = {interval.End}, c = {midPoint}, f(c) = {function.Evaluate(midPoint)}, Sign of f(c) = {sign}, new interval = [{midPoint}, {interval.End}]"
-                );
+                return EvaluateRootPrecision(function, new(midPoint, interval.End), showSteps);
+            }
+        }
 
-                return EvaluateRootPrecision(function, new(midPoint, interval.End), tolerance);
+        public static double? EvaluateRootPrecision(
+            Function function,
+            Interval interval,
+            double tolerance,
+            bool showSteps = false
+        )
+        {
+            if (!ContainsRoot(function, interval))
+            {
+                Console.WriteLine("The function provided doesn't contain any roots.");
+                return null;
+            }
+
+            double midPoint = (interval.Start + interval.End) / 2.0;
+            double width = (interval.End - interval.Start) / 2.0;
+
+            // Show steps if user wants to see them.
+            if (showSteps)
+            {
+                Console.WriteLine($"Interval: {interval.StrValue()}");
+                Console.WriteLine($"Midpoint: {midPoint:0.#####}");
+                Console.WriteLine($"f({midPoint:0.#####}) = {function.Evaluate(midPoint):0.#####}");
+                Console.WriteLine($"Width: {width:0.#####}");
+                Console.WriteLine();
+            }
+
+            if (width < tolerance)
+                return midPoint;
+
+            // Check where the root lies in given interval.
+            var sign = function.GetSignOfTwoFunctionInputs(interval.Start, midPoint);
+
+            if (sign == Sign.MINUS) // Root lies somewhere between interval start and the midpoint.
+            {
+                return EvaluateRootPrecision(
+                    function,
+                    new(interval.Start, midPoint),
+                    tolerance,
+                    showSteps
+                );
+            }
+            else // Root lies somewhere between the midpoint and interval end.
+            {
+                return EvaluateRootPrecision(
+                    function,
+                    new(midPoint, interval.End),
+                    tolerance,
+                    showSteps
+                );
             }
         }
     }

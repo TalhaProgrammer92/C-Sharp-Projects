@@ -61,7 +61,7 @@ namespace BisectionMethod
 
             //Console.WriteLine($"For {a}; {x} --- For {b}; {y}");
 
-            return x < 0 || y < 0 ? Sign.MINUS : Sign.PLUS;
+            return x < 0 ^ y < 0 ? Sign.MINUS : Sign.PLUS;
         }
 
         public override string ToString()
